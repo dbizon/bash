@@ -1,0 +1,15 @@
+- code-server/config/data/logs/***
+- heimdall/config/heimdall/log/***
+- heimdall/config/heimdall/www/logs/***
+- mysql/***
+- nextcloud/db/***
+- nextcloud/config/dbizon*/***
+- nextcloud/config/html/data*/***
+- nextcloud/config/html/decrypted/***
+- nginx/config/mysql*/***
+- postgresql/config/***
+- **/*.log
+- vaultwarden/db/***
+- vaultwarden/config/logs/***
++ */***
++ */.***
