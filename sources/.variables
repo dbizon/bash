@@ -1,0 +1,13 @@
+# don't put duplicate lines or lines starting with space in the history
+# erase duplicates from history
+HISTCONTROL=ignoreboth:erasedups
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# for our prompt decisions in bashrc
+PROMPT_ALTERNATIVE=oneline
+NEWLINE_BEFORE_PROMPT=yes
+force_color_prompt=yes
+UMASK=022
