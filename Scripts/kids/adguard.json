@@ -1,0 +1,8 @@
+{"rules": [
+"@@||*^$client='CLIENT_NAME'",
+"@@||*^$ctag=user_admin|user_regular,important",
+"RULE 3",
+"RULE 4",
+"RULE 5"
+]
+}
