@@ -1,0 +1,16 @@
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+export LS_OPTIONS='--color=auto --human-readable'
+export GREP_OPTIONS='--color=auto'
+export EDITOR=/usr/bin/nano
+export HOST=$(uname -n)
+export IP=$(ip addr show eth0 | grep "inet\b" | awk '{print $2}' | cut -d '/' -f 1)
+export DEBIAN_FRONTEND=noninteractive
+export LESS_TERMCAP_mb=$'\E[1;31m'     # begin blink
+export LESS_TERMCAP_md=$'\E[1;36m'     # begin bold
+export LESS_TERMCAP_me=$'\E[0m'        # reset bold/blink
+export LESS_TERMCAP_so=$'\E[01;33m'    # begin reverse video
+export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
+export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
+export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
+export PUBLICIP=$(curl -s ifconfig.me)
+export PATH="$PATH:/sbin"
