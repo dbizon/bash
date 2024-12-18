@@ -1,0 +1,49 @@
+function setenv () {
+  export $1="$2"
+}
+
+function add-alias (){
+   local name=$1 value="$2"
+   echo alias $name=\'$value\' >>~/.aliases
+   eval alias $name=\'$value\'
+   alias $name
+}
+
+# repeat command.  Like:
+#
+#       repeat 10 echo foo
+
+function repeat (){
+    local count="$1" i;
+    shift;
+    for i in $(_seq 1 "$count");
+    do
+        eval "$@";
+    done
+}
+
+
+function newfolder() {
+        mkdir -p "$1" && cd "$1";
+}
+
+function _exit()
+{
+    echo -e "${RED}Hasta la vista, baby${NC}"
+}
+trap _exit EXIT
+
+#subfunction to repeat
+_seq ()
+{
+    local lower upper output;
+    lower=$1 upper=$2;
+
+    if [ $lower -ge $upper ]; then return; fi
+    while [ $lower -lt $upper ];
+    do
+        echo -n "$lower "
+        lower=$(($lower + 1))
+    done
+    echo "$lower"
+}
