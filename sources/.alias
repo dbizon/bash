@@ -1,0 +1,38 @@
+# Alias definitions.
+        alias clear="clear -x"
+        alias ls='ls $LS_OPTIONS'
+        alias ll='ls $LS_OPTIONS -l'
+        alias l='ls $LS_OPTIONS -lA'
+        alias cp='cp -i'
+        alias nginx_reload='docker exec -it nginx bash -c "nginx -s reload"'
+        alias grep='grep ${GREP_OPTIONS}'
+        alias ip='ip --color=auto'
+        alias h='history'
+        alias j="jobs -l"
+        alias pu="pushd"
+        alias po="popd"
+        alias pubip='curl ifconfig.me'
+        alias getenv='printenv'
+        alias size='du -sh * | sort -h'
+        alias count='find . -type f | wc -l'
+        alias mnt="mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort"
+        alias src='source ~/.bashrc'
+        alias textclean='rm -f *.toc *.aux *.log *.cp *.fn *.tp *.vr *.pg *.ky'
+        alias update='apt update && apt upgrade && apt autoremove && apt clean'
+        alias dkps="docker ps --format '{{.ID}} ~ {{.Names}} ~ {{.Status}} ~ {{.Image}}'"
+        alias mkdir='mkdir -p'
+        alias rsync='rsync --info=progress2'
+# Aliases with conditions
+                          alias clean='echo -n "Really clean this directory?";
+                                read yorn;
+                                if test "$yorn" = "y"; then
+                                        rm -f \#* *~ .*~ *.bak .*.bak  *.tmp .*.tmp core a.out;
+                                        echo "Cleaned.";
+                                else
+                                        echo "Not cleaned.";
+                                fi'
+
+#
+# Csh compatability:
+#
+alias unsetenv=unset
